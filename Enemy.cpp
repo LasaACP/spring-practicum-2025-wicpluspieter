@@ -2,5 +2,6 @@
 #include "Enemy.h"
 
 enemy:enemy() {
-	square = 0;
+	height = 0;
+	width = 0;
 }
