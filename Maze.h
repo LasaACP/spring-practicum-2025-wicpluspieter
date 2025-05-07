@@ -2,34 +2,36 @@
 #define MAZE_H
 
 #include <iostream>
-#include <std.boolh>
+#include <vector>
+#include <random>
 
-typedef enum {
-    DIR_UP = 0;
-    DIR_DOWN,
-    DIR_LEFT,
-    DIR_RIGHT,
-    DIR_COUNT
-} maze_dir
+class Wall {
+    private:
+    public:
+        bool wall_top;
+        bool wall_bottom;
+        bool wall_left;
+        bool wall_right;
+        Wall() : wall_left(true), wall_right (true), wall_top(true), wall_bottom (true);
+}
 
-typedef struct {
+class Cell {
     bool visited;
-    bool wall[DIR_COUNT];
-} maze_cell
+    Wall wall;
+    Cell() visited(false), wall() {}
+}
 
 class Maze {
     private:
     public:
-        void free_maze(Maze *maze);
-        void generate_maze(Maze *maze, int init_x, int init_y);
-        void display_maze(const Maze *maze);
-        void bread_crumb_pick_up();
-        void power_up_pick_up();
-        bool up;
-        bool down;
-        bool left;
-        bool right; 
-        
+        int height;
+        int width;
+        std::vector<std::vector<cell> cells;
+        Maze(int w, int h);
+        void generate_maze(int init_x, init_y);
+//        void pick_up_bread_crumbs();
+//        void pick_up_power_ups();
+        void print_maze();
 }
 
 
