@@ -6,7 +6,8 @@ class enemy{
 	public:
 	enemy();
 	move(string direction, int amount);
-	change state(bool vunerable);
+	changeState(bool vunerable);
+	findPath(int targetHeight, int targetLength);
 };
 
 #endif
