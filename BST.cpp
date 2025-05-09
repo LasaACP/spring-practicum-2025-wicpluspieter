@@ -58,6 +58,9 @@ BST::BST(){
  * prints the top five scores
  */
 void topFive(){
+    //traverse the tree in order and add values to the stack 
+
+    
 
 }
 
