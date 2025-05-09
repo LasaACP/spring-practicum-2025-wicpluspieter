@@ -68,7 +68,7 @@ using namespace std;
     Node* current = head;
   
     while (current != nullptr) {
-        dis += to_string(current->data) + " ";
+        dis += to_string(current->x) + " " + to_string(current->y)+ " ";
         current = current->next;
     }
     

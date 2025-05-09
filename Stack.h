@@ -3,15 +3,18 @@
 #define STACK_H
 struct Node{
      Node*next;
-    int data;
+    int x;
+    int y;
     
-    Node(int a){
-        data = a;
+    Node(int init_x,init_y){
+        x = init_x;
+        y = iniy_y;
         next = nullptr;
     }
     
     Node(){
-        data = 0;
+         x = 0;
+         y = 0;
         next = nullptr;
     }
 };
