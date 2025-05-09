@@ -22,7 +22,7 @@ class BST{
         BST();
         void insert (node*, int);
         void clear();
-        void topfive();
+        void topFive();
         int highScore();
 };
 
