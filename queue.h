@@ -6,7 +6,8 @@
  */
 
 struct node {
-    int data;
+    int row;
+	int column;
     struct node *link;
 };
 
@@ -19,7 +20,7 @@ class Queue {
         node *front;
 
         Queue();
-        void push (int);
+        void push (int row, int column);
         int pop();
         bool isEmpty();
 };

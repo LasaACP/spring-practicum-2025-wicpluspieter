@@ -8,11 +8,12 @@ Queue::Queue(){
     front = NULL;
 }
 
-void Queue::push (int d){
+void Queue::push (int row, int column){
 
     if (Queue::isEmpty()){
     node *t = new node();
-    t->data = d;
+    t->row = row;
+	t->column = column
     
     front = t;
 }
