@@ -21,8 +21,9 @@ class BST{
 
         BST();
         void insert (node*, int);
-        void clear();
+        void clear(node*);
         void topFive();
+        PriorityQueue traverse(node* tree);
         int highScore();
 };
 
