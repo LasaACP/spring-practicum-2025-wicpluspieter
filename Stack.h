@@ -6,9 +6,9 @@ struct Node{
     int x;
     int y;
     
-    Node(int init_x,init_y){
+    Node(int init_x,int init_y){
         x = init_x;
-        y = iniy_y;
+        y = init_y;
         next = nullptr;
     }
     
@@ -32,7 +32,9 @@ class Stack{
     
     bool isEmpty();
     
-    int Peek();
+    int PeekX();
+    
+    int peekY();
     
     void clear();
     

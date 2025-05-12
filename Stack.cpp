@@ -41,13 +41,19 @@ using namespace std;
     }
    
         }
-        int Stack::Peek(){
+        int Stack::PeekX(){
            if (head != nullptr) {
-            return head->data;
+            return head->x;
         }
-        return -1;
+        return;
         }
-        
+
+        int Stack::PeekY(){
+               if (head != nullptr) {
+            return head->y;
+        }
+        return;
+}
         bool Stack::isEmpty(){
             if (head != nullptr){
                 return false;
