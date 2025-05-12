@@ -70,7 +70,7 @@ int Maze::getWidth(){
 }
 
 }
-  void Maze::generate_Maze(int w, int h){
+  void Maze::generate_Maze(){
    Stack check;
     check.push(new Node(0,0));
     M[0][0].visited = true;
@@ -78,12 +78,12 @@ int Maze::getWidth(){
         Pos current;
        current.setX(check.PeekX());
       current.setY(check.PeekY());
-      std::vector<Pos> nearbyUnvisited = getNearby(check.PeekX(),check.PeekY());
+      std::vector<Pos> nearbyUnvisited = get_Nearby(check.PeekX(),check.PeekY());
     if (!nearbyUnvisited.empty()){
       int ran = rand() % nearbyUnvisited.size();
       Pos next = nearbyUnvisited[ran];
       remove_Wall(current, next);
-      M[next.getX()][next.getY()].visited = true;
+      M[next.getY()][next.getX()].visited = true;
       check.push(new Node(next.getX(), next.getY()));
  
 }

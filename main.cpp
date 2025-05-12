@@ -1,12 +1,16 @@
+#include "Stack.h"
+#include "Maze.h"
+#include <vector>
 #include <iostream>
 using namespace std;
 
 
 
 int main(){
-//generate_Maze(10,10);
-//print_Maze();
-cout << "Hi";
+ Maze run = Maze(10,10);
+run.generate_Maze(10,10);
+run.printMaze();
+
 return 0;
 
-}                                                                                                                                                                    
+}                                                                                                                                                                                                                  
