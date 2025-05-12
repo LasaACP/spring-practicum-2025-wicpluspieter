@@ -45,7 +45,6 @@ int Maze::getWidth(){
         if (y - 1 >= 0 && !M[y - 1][x].visited)
             nearby.push_back(Pos(x, y - 1));
 }
-}
        return nearby;
 
 
@@ -102,22 +101,22 @@ void Maze::printMaze() {
     for (int y = 0; y < getHeight(); ++y) {
    
         for (int x = 0; x < getWidth(); ++x) {
-            cout << "+";
-            cout << (M[y][x].wall.wall_top ? "---" : "   ");
+            std::cout << "+";
+            std::cout << (M[y][x].wall.wall_top ? "---" : "   ");
         }
-        cout << "+\n";
+        std::cout << "+\n";
 
         for (int x = 0; x < getWidth(); ++x) {
-            cout << (M[y][x].wall.wall_left ? "|" : " ");
-            cout << "   ";
+            std::cout << (M[y][x].wall.wall_left ? "|" : " ");
+            std::cout << "   ";
         }
-        cout << "|\n";
+        std::cout << "|\n";
     }
 
  
     for (int x = 0; x < getWidth(); ++x) {
-        cout << "+---";
+        std::cout << "+---";
     }
-    cout << "+\n";
+    std::cout << "+\n";
 }
 

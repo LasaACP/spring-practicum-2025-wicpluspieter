@@ -6,22 +6,23 @@
 
 
 class Wall {
-    private:
+    public:
       bool wall_top;
         bool wall_bottom;
         bool wall_left;
         bool wall_right;
-    public:
-  
-        Wall() : wall_left(true), wall_right (true), wall_top(true), wall_bottom (true){}
+   
+        Wall() : wall_left(true), wall_right (true), wall_top(true), wall_bottom (true){} 
+     friend class Maze;
 };
 
 class Cell {
-   private:
+   public:
     bool visited;
     Wall wall;
-  public:
+  
     Cell() : visited(false), wall() {}
+    
  friend class Maze;
 };
 
@@ -42,7 +43,7 @@ class Maze {
     private:
   int height;
   int width;
-  std::vector<std::vector<Cell>> M;
+  std::vector<std::vector<Cell>> Maze;
     public:
       
         
@@ -51,7 +52,8 @@ class Maze {
         void remove_Wall(Pos curr, Pos next);
         int getHeight();
         int getWidth();
-        std::vector<Pos> getNearby(int x, int y);
+        std::vector<Pos> get_Nearby(int x, int y);
+    
         
 //        void pick_up_bread_crumbs();
 //        void pick_up_power_ups();
