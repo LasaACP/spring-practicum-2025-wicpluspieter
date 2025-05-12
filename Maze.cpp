@@ -22,7 +22,7 @@
  Maze::Maze(int w,int h){
       height = h;
       width = w;
-      Maze = std::vector<std::vector<Cell>>(h, vector<Cell>(w));
+      M = std::vector<std::vector<Cell>>(h, std::vector<Cell>(w));
 
 }
   int Maze::getHeight(){
@@ -36,13 +36,13 @@ int Maze::getWidth(){
   std::vector<Pos> Maze::get_Nearby(int x, int y){
       std::vector<Pos> nearby;
       if(x>=0 && y>= 0 && x<getWidth() && y<getHeight()){
-        if (x + 1 < width && !Maze[y][x + 1].visited)
+        if (x + 1 < width && !M[y][x + 1].visited)
             nearby.push_back(Pos(x + 1, y));
-        if (x - 1 >= 0 && !Maze[y][x - 1].visited)
+        if (x - 1 >= 0 && !M[y][x - 1].visited)
             nearby.push_back(Pos(x - 1, y));
-        if (y + 1 < height && !Maze[y + 1][x].visited)
+        if (y + 1 < height && !M[y + 1][x].visited)
             nearby.push_back(Pos(x, y + 1));
-        if (y - 1 >= 0 && !Maze[y - 1][x].visited)
+        if (y - 1 >= 0 && !M[y - 1][x].visited)
             nearby.push_back(Pos(x, y - 1));
 }
 }
@@ -54,27 +54,27 @@ int Maze::getWidth(){
     int x_change = next.x - curr.x;
     int y_change = next.y - curr.y;
     if(x_change>0){
-        Maze[curr.y][curr.x].wall.wall_right = false;
-        Maze[next.y][next.x].wall.wall_left = false;
+        M[curr.y][curr.x].wall.wall_right = false;
+        M[next.y][next.x].wall.wall_left = false;
 }
    else if(x_change<0){
-        Maze[curr.y][curr.x].wall.wall_left = false;
-        Maze[next.y][next.x].wall.wall_right = false;
+        M[curr.y][curr.x].wall.wall_left = false;
+        M[next.y][next.x].wall.wall_right = false;
 }
    else if(y_change>0){
-        Maze[curr.y][curr.x].wall.wall_bottom = false;
-        Maze[next.y][next.x].wall.wall_top = false;
+        M[curr.y][curr.x].wall.wall_bottom = false;
+        M[next.y][next.x].wall.wall_top = false;
 }
   else if(y_change<0){
-        Maze[curr.y][curr.x].wall.wall_top = false;
-        Maze[next.y][next.x].wall.wall_bottom = false;
+        M[curr.y][curr.x].wall.wall_top = false;
+        M[next.y][next.x].wall.wall_bottom = false;
 }
 
 }
   void Maze::generate_Maze(int w, int h){
    Stack check;
     check.push(new Node(0,0));
-    Maze[0][0].visited = true;
+    M[0][0].visited = true;
   while(!(check.isEmpty())){
         Pos current;
        current.setX(check.PeekX());
@@ -84,7 +84,7 @@ int Maze::getWidth(){
       int ran = rand() % nearbyUnvisited.size();
       Pos next = nearbyUnvisited[ran];
       remove_Wall(current, next);
-      Maze[next.getX()][next.getY()].visited = true;
+      M[next.getX()][next.getY()].visited = true;
       check.push(new Node(next.getX(), next.getY()));
  
 }
@@ -103,12 +103,12 @@ void Maze::printMaze() {
    
         for (int x = 0; x < getWidth(); ++x) {
             cout << "+";
-            cout << (Maze[y][x].top ? "---" : "   ");
+            cout << (M[y][x].wall.wall_top ? "---" : "   ");
         }
         cout << "+\n";
 
         for (int x = 0; x < getWidth(); ++x) {
-            cout << (Maze[y][x].left ? "|" : " ");
+            cout << (M[y][x].wall.wall_left ? "|" : " ");
             cout << "   ";
         }
         cout << "|\n";

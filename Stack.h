@@ -38,8 +38,6 @@ class Stack{
     
     void clear();
     
-    string Display();
-    
     int Size();
     
     

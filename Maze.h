@@ -42,7 +42,7 @@ class Maze {
     private:
   int height;
   int width;
-  std::vector<std::vector<Cell>> Maze;
+  std::vector<std::vector<Cell>> M;
     public:
       
         

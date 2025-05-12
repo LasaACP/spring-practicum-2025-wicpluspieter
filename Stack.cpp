@@ -62,26 +62,7 @@ using namespace std;
             
             
         }
-        
-       string Stack::Display() {
-    string dis = "";
-    
 
-    if (Size() == 0) {
-        return "Empty \n";
-    }
-
-    Node* current = head;
-  
-    while (current != nullptr) {
-        dis += to_string(current->x) + " " + to_string(current->y)+ " ";
-        current = current->next;
-    }
-    
-  
-    
-    return dis+"\n";
-}
         
     int Stack::Size(){
             
