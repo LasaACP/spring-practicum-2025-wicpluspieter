@@ -34,7 +34,7 @@ class Stack{
     
     int PeekX();
     
-    int peekY();
+    int PeekY();
     
     void clear();
     

@@ -45,14 +45,14 @@ using namespace std;
            if (head != nullptr) {
             return head->x;
         }
-        return;
+        return -1;
         }
 
         int Stack::PeekY(){
                if (head != nullptr) {
             return head->y;
         }
-        return;
+        return -1;
 }
         bool Stack::isEmpty(){
             if (head != nullptr){

@@ -13,48 +13,50 @@ class Wall {
         bool wall_right;
     public:
   
-        Wall() : wall_left(true), wall_right (true), wall_top(true), wall_bottom (true);
-}
+        Wall() : wall_left(true), wall_right (true), wall_top(true), wall_bottom (true){}
+};
 
 class Cell {
    private:
     bool visited;
     Wall wall;
   public:
-    Cell() visited(false), wall() {}
-}
+    Cell() : visited(false), wall() {}
+ friend class Maze;
+};
 
 struct Pos{
  private:
   int x;
   int y;
  public:
- pos(){ int x,y =0;}
+ Pos() : x(0), y(0) {}
  void setX(int init_x);
  void setY(int init_y);
  int getX();
  int getY();
- }
+ friend class Maze;
+ };
 
 class Maze {
     private:
   int height;
   int width;
-  vector<vector<Cell>> Maze;
+  std::vector<std::vector<Cell>> Maze;
     public:
       
         
         Maze(int w, int h);
-        void generate_Maze(int init_x, init_y);
+        void generate_Maze(int init_x, int init_y);
         void remove_Wall(Pos curr, Pos next);
         int getHeight();
         int getWidth();
-        vector<Pos> getNearby(int x, int y);
+        std::vector<Pos> getNearby(int x, int y);
         
 //        void pick_up_bread_crumbs();
 //        void pick_up_power_ups();
-        void print_maze();
-}
+        void printMaze();
+};
 
 
 #endif // MAZE.H
