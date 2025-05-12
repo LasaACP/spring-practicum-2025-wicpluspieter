@@ -30,7 +30,7 @@ struct Pos{
  private:
   int x;
   int y;
- public:
+public:
  Pos() : x(0), y(0) {}
  Pos(int init_x, int init_y): x(init_x), y(init_y) {}
  void setX(int init_x);

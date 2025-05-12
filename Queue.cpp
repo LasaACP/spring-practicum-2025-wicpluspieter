@@ -8,12 +8,13 @@ Queue::Queue(){
     front = NULL;
 }
 
-void Queue::push (int row, int column){
+void Queue::push (int r, int c, int d){
 
     if (Queue::isEmpty()){
     node *t = new node();
-    t->row = row;
-	t->column = column
+    t->row = r;
+	t->column = c;
+	t->distance = d;
     
     front = t;
 }
@@ -31,11 +32,11 @@ void Queue::push (int row, int column){
     }
 }
 
-int Queue::pop(){
+node* Queue::pop(){
     if (!Queue::isEmpty()){
         node* r = front;
         front = front->link;
-        return r->data;
+        return r;
     }
     return 0;
 }

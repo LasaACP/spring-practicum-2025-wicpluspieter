@@ -1,13 +1,24 @@
 #ifndef ENEMY_H
 #define  ENEMY_H
+#include <vector>
+using namespace std;
+
+struct noder {
+    int row;
+	int column;
+    struct node *link;
+};
+
 class enemy{
-	int height;
-	int width;
+	int row;
+	int column;
+	Maze* maze;
 	public:
-	enemy();
-	move(string direction, int amount);
-	changeState(bool vunerable);
-	findPath(int targetHeight, int targetLength);
+	enemy(Maze* m);
+	void move(string direction, int amount);
+	void changeState(bool vunerable);
+	vector<node*> findPath(int targetHeight, int targetLength);
+	vector<node*> pathFind(Pos start);
 };
 
 #endif
