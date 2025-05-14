@@ -5,6 +5,18 @@
 #include "Enemy.h"
 #include <vector>
 
+  Pos::Pos(){
+    x = 0;
+    y = 0;
+    d = 0;
+
+}
+
+ Pos::Pos(int init_x, int init_y, int init_d){
+    x = init_x;
+    y = init_y;
+    d = init_d;
+}
   void Pos::setX(int init_x){
     x = init_x;
 }
@@ -89,7 +101,24 @@ int Maze::getWidth(){
  
 }
   else{
-     check.pop();
+   int ran = (rand() % 2)+1;
+    switch(ran){
+  case 1:
+
+   Pos next = Pos(current.getX()-1, current.getY(), 0);
+   remove_Wall(current,next);
+    break;
+  case 2:
+     
+   Pos next = Pos(current.getX()+1, current.getY(), 0);
+   remove_Wall(current,next);
+   break;
+
+   
+
+
+}
+    check.pop(); 
 
   }
 
