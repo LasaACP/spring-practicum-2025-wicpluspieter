@@ -18,11 +18,11 @@ void enemy::updateLocation(int new_row, int new_column) {
 vector<node*> enemy::findPath(int targetHeight, int targetLength) {
 	Queue quew;
 	quew.push(targetHeight, targetLength, 0);
-	while(!quew.isEmpty() {
+	while(!quew.isEmpty()) {
 		node* temp = quew.pop();
-		int dis = temp->distances;
-		for (Pos p : maze.getNearby(temp->row, temp->column)) {
-			if(p.x = targetHeight && p.y = targetLength) {
+		int dis = temp->distance;
+		for (Pos p : maze->get_Nearby(temp->row, temp->column)) {
+			if(p.x == targetHeight && p.y == targetLength) {
 				return pathFind(p);
 			} else if(dis == 0){
 				quew.push(p.x, p.y, dis+1);
@@ -30,17 +30,22 @@ vector<node*> enemy::findPath(int targetHeight, int targetLength) {
 			}
 		} 
 	}
-	return NULL;
+	vector<node*> thing;
+	return thing;
 }
 
 vector<node*> enemy::pathFind(Pos start) {
 	Queue aych;
-	vector<node*> rtr = {start};
+	node* temp2;
+	temp2->row = start.x;
+	temp2->column = start.y;
+	temp2->distance = start.distance;
+	vector<node*> rtr = {temp2};
 	int d = start.distance;
 	aych.push(start.x, start.y, d);
-	while(!aych.isEmpty() {
-	Node* b = aych.pop();
-	for(Pos p : maze.getNearby(b->row, b->column) {
+	while(!aych.isEmpty()) {
+	node* b = aych.pop();
+	for(Pos p : maze->get_Nearby(b->row, b->column)) {
 		if(p.distance == d-1) {
 			rtr.insert(rtr.begin(), p);
 			d--;
