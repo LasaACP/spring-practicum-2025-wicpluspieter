@@ -26,7 +26,7 @@ void Queue::push (int r, int c, int d){
         }
         
         node *t = new node();
-        t->data = d;
+        t->distance = d;
         
         temp->link = t;
     }

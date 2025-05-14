@@ -8,7 +8,7 @@
 struct node {
     int row;
 	int column;
-	int distance
+	int distance;
     struct node *link;
 };
 
