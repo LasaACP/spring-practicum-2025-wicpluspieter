@@ -17,7 +17,7 @@ void enemy::updateLocation(int new_row, int new_column) {
 
 vector<node*> enemy::findPath(int targetHeight, int targetLength) {
 	Queue quew;
-	quew.push(targetHeight, targetLength);
+	quew.push(targetHeight, targetLength, 0);
 	while(!quew.isEmpty() {
 		node* temp = quew.pop();
 		int dis = temp->distances;
