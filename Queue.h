@@ -8,6 +8,7 @@
 struct node {
     int row;
 	int column;
+	int distance
     struct node *link;
 };
 
@@ -20,7 +21,7 @@ class Queue {
         node *front;
 
         Queue();
-        void push (int row, int column);
+        void push (int row, int column, int d);
         node* pop();
         bool isEmpty();
 };
