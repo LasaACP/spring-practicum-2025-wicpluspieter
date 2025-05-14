@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include "Stack.h"
 #include "Maze.h"
+#include "Enemy.h"
 #include <vector>
 
   void Pos::setX(int init_x){
@@ -96,7 +97,7 @@ int Maze::getWidth(){
 
 }
 }
-
+ 
 void Maze::printMaze() {
     for (int y = 0; y < getHeight(); ++y) {
    
@@ -118,5 +119,5 @@ void Maze::printMaze() {
         std::cout << "+---";
     }
     std::cout << "+\n";
-}
+} 
 

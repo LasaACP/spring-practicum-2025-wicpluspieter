@@ -23,7 +23,7 @@ BST::BST(){
         return;
     }
 
-    if (tree->score = newScore){
+    if (tree->score == newScore){
         return;
     }
 

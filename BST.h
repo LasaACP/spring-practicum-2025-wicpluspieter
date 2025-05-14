@@ -1,3 +1,5 @@
+#include "PriorityQueue.h"
+
 #ifndef BSTREE_H
 #define BSTREE_H
 
