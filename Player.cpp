@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Enemy.h"
+#include "Player.h"
 #include "Queue.h"
 #include <vector>
 using namespace std;
