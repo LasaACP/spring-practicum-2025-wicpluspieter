@@ -9,6 +9,11 @@ enemy:enemy(Maze * m) {
 	maze = m;
 }
 
+void enemy:updateLocation(int new_row, int new_column) {
+	row = new_row;
+	column = new_column;
+}
+
 vector<node*> enemy:findPath(int targetHeight, int targetLength) {
 	Queue quew;
 	quew.push(targetHeight, targetLength);

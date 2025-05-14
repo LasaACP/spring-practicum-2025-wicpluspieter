@@ -15,8 +15,7 @@ class enemy{
 	Maze* maze;
 	public:
 	enemy(Maze* m);
-	void move(string direction, int amount);
-	void changeState(bool vunerable);
+	void updateLocation(int new_row, int new_column);
 	vector<node*> findPath(int targetHeight, int targetLength);
 	vector<node*> pathFind(Pos start);
 };
