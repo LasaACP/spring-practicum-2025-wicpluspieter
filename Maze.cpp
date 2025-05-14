@@ -50,13 +50,13 @@ int Maze::getWidth(){
       std::vector<Pos> nearby;
       if(x>=0 && y>= 0 && x<getWidth() && y<getHeight()){
         if (x + 1 < width && !M[y][x + 1].visited)
-            nearby.push_back(Pos(x + 1, y));
+            nearby.push_back(Pos(x + 1, y,0));
         if (x - 1 >= 0 && !M[y][x - 1].visited)
-            nearby.push_back(Pos(x - 1, y));
+            nearby.push_back(Pos(x - 1, y,0));
         if (y + 1 < height && !M[y + 1][x].visited)
-            nearby.push_back(Pos(x, y + 1));
+            nearby.push_back(Pos(x, y + 1,0));
         if (y - 1 >= 0 && !M[y - 1][x].visited)
-            nearby.push_back(Pos(x, y - 1));
+            nearby.push_back(Pos(x, y - 1,0));
 }
        return nearby;
 
@@ -110,7 +110,7 @@ int Maze::getWidth(){
     break;
   case 2:
      
-   Pos next = Pos(current.getX()+1, current.getY(), 0);
+   next = Pos(current.getX()+1, current.getY(), 0);
    remove_Wall(current,next);
    break;
 
