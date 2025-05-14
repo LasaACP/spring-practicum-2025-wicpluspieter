@@ -21,7 +21,7 @@ class Queue {
 
         Queue();
         void push (int row, int column);
-        int pop();
+        node* pop();
         bool isEmpty();
 };
 

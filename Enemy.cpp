@@ -1,20 +1,21 @@
 #include <iostream>
 #include "Enemy.h"
 #include "Queue.h"
+#include "Maze.h"
 #include <vector>
 using namespace std;
-enemy:enemy(Maze * m) {
+enemy::enemy(Maze * m) {
 	row = 0;
 	column = 0;
 	maze = m;
 }
 
-void enemy:updateLocation(int new_row, int new_column) {
+void enemy::updateLocation(int new_row, int new_column) {
 	row = new_row;
 	column = new_column;
 }
 
-vector<node*> enemy:findPath(int targetHeight, int targetLength) {
+vector<node*> enemy::findPath(int targetHeight, int targetLength) {
 	Queue quew;
 	quew.push(targetHeight, targetLength);
 	while(!quew.isEmpty() {
@@ -31,7 +32,7 @@ vector<node*> enemy:findPath(int targetHeight, int targetLength) {
 	return NULL;
 }
 
-vector<node*> enemy:pathFind(Pos start) {
+vector<node*> enemy::pathFind(Pos start) {
 	Queue aych;
 	vector<node*> rtr = {start};
 	int d = start->distance;
