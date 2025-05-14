@@ -26,6 +26,7 @@ vector<node*> enemy::findPath(int targetHeight, int targetLength) {
 				return pathFind(p);
 			} else if(dis == 0){
 				quew.push(p.x, p.y, dis+1);
+				p.distance = dis+1;
 			}
 		} 
 	}
@@ -35,10 +36,11 @@ vector<node*> enemy::findPath(int targetHeight, int targetLength) {
 vector<node*> enemy::pathFind(Pos start) {
 	Queue aych;
 	vector<node*> rtr = {start};
-	int d = start->distance;
+	int d = start.distance;
 	aych.push(start.x, start.y, d);
 	while(!aych.isEmpty() {
-	for(Pos p : maze.getNearby(p.x, p.y) {
+	Node* b = aych.pop();
+	for(Pos p : maze.getNearby(b->row, b->column) {
 		if(p.distance == d-1) {
 			rtr.insert(rtr.begin(), p);
 			d--;
