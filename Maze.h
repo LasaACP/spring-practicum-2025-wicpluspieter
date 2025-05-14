@@ -27,12 +27,13 @@ class Cell {
 };
 
 struct Pos{
- public;
+ public:
   int x;
-  int y;
+  int y; 
+  int d;
 
- Pos() : x(0), y(0) {}
- Pos(int init_x, int init_y): x(init_x), y(init_y) {}
+ Pos() : x(0), y(0), d(0) {}
+ Pos(int init_x, int init_y, int init_d): x(init_x), y(init_y), d(init_d){}
  void setX(int init_x);
  void setY(int init_y);
  int getX();
