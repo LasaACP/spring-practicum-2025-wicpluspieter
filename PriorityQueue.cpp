@@ -46,7 +46,7 @@ void PriorityQueue::push(int item)
 int PriorityQueue::top()
 {
    if (front==NULL){
-    return NULL;
+    return 0;
   }
   return front->data;
 }
