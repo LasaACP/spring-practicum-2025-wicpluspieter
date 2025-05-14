@@ -23,7 +23,7 @@ BST::BST(){
         return;
     }
 
-    if (tree->score = newScore){
+    if (tree->score == newScore){
         return;
     }
 
@@ -98,7 +98,6 @@ PriorityQueue BST::traverse(node* tree){
     pq.push(tree->score);
 
     traverse(tree->p_right);
-
 }
 
 /* 
