@@ -101,16 +101,10 @@ int Maze::getWidth(){
  
 }
   else{
-   int ran = (rand() % 2)+1;
-  
-  if (ran == 1){
+ 
+
     Pos next = Pos(current.getX()-1, current.getY(), 0);
    remove_Wall(current,next);
-}
-else{
-    Pos next = Pos(current.getX()+1, current.getY(), 0);
-   remove_Wall(current,next);
-}
    
  
      
