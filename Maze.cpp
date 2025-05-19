@@ -102,7 +102,7 @@ int Maze::getWidth(){
 }
   else{
   Wall currWall = M[current.getY()][current.getX()].wall;
-  int wallsFalse = falseWalls(curWall);
+  int wallsFalse = falseWalls(currWall);
   if(wallsFalse == 1){
      if(current.getY()+1 >getHeight()|| current.getY()-1 < getHeight()){
         int ran = (rand() % 2) + 1;
