@@ -104,7 +104,7 @@ int Maze::getWidth(){
   Wall currWall = M[current.getY()][current.getX()].wall;
   int wallsFalse = currWall.falseWalls(currWall);
   if(wallsFalse == 1){
-     if(current.getY()+1 >getHeight()|| current.getY()-1 < getHeight()){
+     if(current.getY()+1 < getHeight()|| current.getY()-1 >getHeight()){
         int ran = (rand() % 2) + 1;
         if(ran == 1){
             Pos next = Pos(current.getX()-1, current.getY(), 0);
@@ -115,7 +115,7 @@ int Maze::getWidth(){
             remove_Wall(current,next);
         }
     }
-    else if(current.getX()+1 > getWidth() || current.getX()-1 < getWidth()){
+    else if(current.getX()+1 < getWidth() || current.getX()-1 >getWidth()){
          int ran = (rand() % 2) + 1;
         if(ran == 1){
             Pos next = Pos(current.getX(), current.getY()-1, 0);
