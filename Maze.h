@@ -11,7 +11,7 @@ class Wall {
         bool wall_bottom;
         bool wall_left;
         bool wall_right;
-   
+        int falseWalls(Wall w);
         Wall() : wall_left(true), wall_right (true), wall_top(true), wall_bottom (true){} 
      friend class Maze;
 };

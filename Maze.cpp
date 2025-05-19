@@ -101,26 +101,35 @@ int Maze::getWidth(){
  
 }
   else{
- 
-
-    Pos next = Pos(current.getX()-1, current.getY(), 0);
-   remove_Wall(current,next);
-   
- 
-     
-
-
-
-   
-
-
-
+  Wall currWall = M[current.getY()][current.getX()].wall;
+  int wallsFalse = falseWalls(curWall);
+  if(wallsFalse == 1){
+     if(current.getY()+1 >getHeight()|| current.getY()-1 < getHeight()){
+        int ran = (rand() % 2) + 1;
+        if(ran == 1){
+            Pos next = Pos(current.getX()-1, current.getY(), 0);
+            remove_Wall(current,next);
+        }
+        else{
+            Pos next = Pos(current.getX()+1, current.getY(), 0);
+            remove_Wall(current,next);
+        }
+    }
+    else if(current.getX()+1 > getWidth() || current.getX()-1 < getWidth()){
+         int ran = (rand() % 2) + 1;
+        if(ran == 1){
+            Pos next = Pos(current.getX(), current.getY()-1, 0);
+            remove_Wall(current,next);
+        }
+        else{
+            Pos next = Pos(current.getX(), current.getY()+1, 0);
+            remove_Wall(current,next);
+        }
+    }
+}
     check.pop(); 
 
   }
-
-
-
 }
 }
  
@@ -146,4 +155,25 @@ void Maze::printMaze() {
     }
     std::cout << "+\n";
 } 
+int Wall::falseWalls(Wall w){
+ int count = 0;
+ if(!(w.wall_left)){
+ count++;
 
+}
+
+ if(!(w.wall_right)){
+ count++;
+
+}
+ if(!(w.wall_top)){
+ count++;
+
+}
+ if(!(w.wall_bottom)){
+ count++;
+
+} 
+
+return count;  
+}
