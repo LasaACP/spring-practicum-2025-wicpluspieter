@@ -105,7 +105,6 @@ int Maze::getWidth(){
   int wallsFalse = currWall.falseWalls(currWall);
   if(wallsFalse == 1){
      if(current.getY()+1 > getHeight()|| current.getY()-1 < getHeight()){
-    
         if(current.getX()-1 > getWidth()){
             Pos next = Pos(current.getX()-1, current.getY(), 0);
             remove_Wall(current,next);
@@ -115,8 +114,7 @@ int Maze::getWidth(){
             remove_Wall(current,next);
         }
     }
-    else if(current.getX()+1 > getWidth() || current.getX()-1 < getWidth()){
-    
+    if(current.getX()+1 > getWidth() || current.getX()-1 < getWidth()){
         if(current.getY()-1 > getHeight()){
             Pos next = Pos(current.getX(), current.getY()-1, 0);
             remove_Wall(current,next);
@@ -128,7 +126,6 @@ int Maze::getWidth(){
     }
 }
     check.pop(); 
-
   }
 }
 }
