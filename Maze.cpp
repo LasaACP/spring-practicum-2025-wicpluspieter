@@ -114,7 +114,7 @@ int Maze::getWidth(){
             remove_Wall(current,next);
         }
     }
-    if(current.getX()+1 > getWidth() || current.getX()-1 < getWidth()){
+    else if(current.getX()+1 > getWidth() || current.getX()-1 < getWidth()){
         if(current.getY()-1 > getHeight()){
             Pos next = Pos(current.getX(), current.getY()-1, 0);
             remove_Wall(current,next);
